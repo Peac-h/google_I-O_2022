@@ -100,7 +100,7 @@ const Hero = () => (
       </div>
 
       <div className="border-dark flex w-full flex-col justify-between rounded-xl bg-col-blue p-6 text-col-dark lg:min-w-[550px] xl:w-1/3">
-        <h2 className="w-5/6 text-base font-medium sm:text-[32px] sm:leading-8 sm:tracking-[-.8px] lg:text-5xl lg:leading-[56px]">
+        <h2 className="font-h2-large w-5/6">
           And that's a wrap!
           <br />
           Thanks for joining Google I/O 2022.

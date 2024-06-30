@@ -7,6 +7,7 @@ import Main from "./freatures/Main";
 import Skills from "./freatures/sections/Skills";
 import Sections from "./freatures/Sections";
 import Products from "./freatures/sections/Products";
+import Recap from "./freatures/sections/Recap";
 
 const App = () => (
   <div className="app">
@@ -18,6 +19,7 @@ const App = () => (
         <Sessions />
         <Skills />
         <Products />
+        <Recap />
       </Sections>
     </Main>
     <Footer />

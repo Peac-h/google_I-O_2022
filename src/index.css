@@ -22,7 +22,7 @@
 }
 
 .app {
-  @apply flex min-h-screen flex-col bg-col-dark pb-96 text-base font-normal text-col-light;
+  @apply flex min-h-screen flex-col bg-col-dark text-base font-normal text-col-light;
 }
 
 /* wrapper */
@@ -46,6 +46,9 @@
 .border-light {
   @apply border border-col-light;
 }
+.border-yellow {
+  @apply border border-col-yellow-light;
+}
 .border-hover {
   @apply border border-transparent hover:border-white;
 }
@@ -56,6 +59,9 @@
 /* text */
 .font-h2 {
   @apply font-bold sm:text-[28px] sm:leading-8 sm:tracking-[-.25px] lg:text-4xl lg:leading-[44px] lg:tracking-[-.75px];
+}
+.font-h2-large {
+  @apply text-base font-medium sm:text-[32px] sm:leading-8 sm:tracking-[-.8px] lg:text-5xl lg:leading-[56px];
 }
 .font-h3 {
   @apply font-medium sm:text-xl sm:leading-6 sm:tracking-[-.5px] lg:text-2xl lg:leading-[30px];
