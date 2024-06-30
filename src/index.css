@@ -40,5 +40,5 @@
 }
 
 .border-hover {
-  @apply rounded-xl border-2 border-solid border-transparent hover:border-white;
+  @apply border-2 border-solid border-transparent hover:border-white;
 }

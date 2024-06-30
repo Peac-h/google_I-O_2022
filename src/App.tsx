@@ -1,4 +1,4 @@
-import Features from "./freatures/sections/Features";
+import Sessions from "./freatures/sections/Sessions";
 import Footer from "./freatures/Footer";
 import Header from "./freatures/Header";
 import Hero from "./freatures/Hero";
@@ -14,7 +14,7 @@ const App = () => (
       <Hero />
       <Sections>
         <Keynotes />
-        <Features />
+        <Sessions />
         <Skills />
       </Sections>
     </Main>

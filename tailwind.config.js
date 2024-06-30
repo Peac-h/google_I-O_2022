@@ -10,6 +10,7 @@ export default {
         "col-yellow-dark": "#f6bd41",
         "col-yellow-light": "#fcd56c",
         "col-blue": "#93c5fd",
+        "col-blue-dark": "#8ab4f8",
       },
     },
     screens: {

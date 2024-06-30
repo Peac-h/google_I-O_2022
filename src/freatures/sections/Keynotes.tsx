@@ -4,7 +4,7 @@ const KeynoteCard = (props: {
   title: string;
   label: string;
 }) => (
-  <div className="border-hover mx-2 md:mx-0">
+  <div className="border-hover mx-2 rounded-xl md:mx-0">
     <div className="w-full p-4 md:p-5">
       <a href={props.href}>
         <div className="relative mb-5 aspect-[16/9] w-full">
