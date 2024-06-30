@@ -5,7 +5,7 @@ const CloseButton = () => (
     aria-label="Close"
   >
     <svg
-      className="fill-col-light-dark h-6 w-6"
+      className="h-6 w-6 fill-col-light-dark"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 18 18"
     >
@@ -16,7 +16,7 @@ const CloseButton = () => (
 
 const PausePlayButton = () => (
   <button
-    className="border-dark hover:bg-col-dark group absolute right-4 top-4 rounded-full p-2 transition duration-200 ease-linear"
+    className="border-dark group absolute right-4 top-4 rounded-full p-2 transition duration-200 ease-linear hover:bg-col-dark"
     aria-label="pause animation"
   >
     <svg
@@ -66,8 +66,8 @@ const PausePlayButton = () => (
 
 const Hero = () => (
   <div className="hero-wrapper flex flex-col gap-y-2">
-    <div className="border-light bg-col-yellow-dark relative rounded-xl py-4 text-center">
-      <p className="text-col-dark text-sm font-medium">
+    <div className="border-light relative rounded-xl bg-col-yellow-dark py-4 text-center">
+      <p className="text-sm font-medium text-col-dark">
         Tip: You can find bookmarked sessions in your{" "}
         <a
           href="https://developers.google.com/profile/u/me"
@@ -83,7 +83,7 @@ const Hero = () => (
     </div>
 
     <div className="flex flex-col gap-x-2 gap-y-2 md:flex-row md:gap-y-0">
-      <div className="border-dark bg-col-yellow-light relative flex flex-col items-center overflow-hidden rounded-lg md:w-2/3 md:flex-row">
+      <div className="border-dark relative flex flex-col items-center overflow-hidden rounded-lg bg-col-yellow-light md:w-2/3 md:flex-row">
         <div className="flex flex-1">
           <div className="hidden w-full self-end md:block md:h-[407px]">
             <PausePlayButton />
@@ -99,7 +99,7 @@ const Hero = () => (
         </div>
       </div>
 
-      <div className="border-dark bg-col-blue text-col-dark flex flex-col justify-between rounded-xl p-6 lg:min-w-[550px] xl:w-1/3">
+      <div className="border-dark flex w-full flex-col justify-between rounded-xl bg-col-blue p-6 text-col-dark lg:min-w-[550px] xl:w-1/3">
         <h2 className="w-5/6 text-base font-medium sm:text-[32px] sm:leading-8 sm:tracking-[-.8px] lg:text-5xl lg:leading-[56px]">
           And that's a wrap!
           <br />

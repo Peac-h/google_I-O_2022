@@ -18,13 +18,11 @@ const KeynoteCard = (props: {
           />
         </div>
         <div className="mb-4">
-          <h3 className="my-2 font-medium sm:text-xl sm:leading-6 sm:tracking-[-.5px] lg:text-2xl lg:leading-[30px]">
-            {props.title}
-          </h3>
+          <h3 className="font-h3 my-2">{props.title}</h3>
         </div>
       </a>
       <div className="mt-auto flex justify-between">
-        <div className="text-sm leading-6 tracking-[.2px]">
+        <div className="font-span">
           <span>{props.label}</span>
         </div>
       </div>
@@ -34,10 +32,7 @@ const KeynoteCard = (props: {
 
 const Keynotes = () => (
   <section className="px-2 pt-24 md:px-9">
-    <h2 className="mb-8 font-semibold sm:text-[28px] sm:leading-8 sm:tracking-[-.25px] lg:text-4xl lg:leading-[44px] lg:tracking-[-.75px]">
-      Watch the keynotes
-    </h2>
-
+    <h2 className="font-h2 mb-8">Watch the keynotes</h2>
     <div className="grid grid-cols-1 gap-x-8 md:grid-cols-2">
       <KeynoteCard
         href="/2022/program/8e80903f-955f-4a5b-9118-b0ce4acdb0e6/"

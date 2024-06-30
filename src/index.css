@@ -1,9 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* @import "font.css"; */
 
 :root {
   font-family:
+    sans-serif,
     system-ui,
     -apple-system,
     Segoe UI,
@@ -20,25 +22,63 @@
 }
 
 .app {
-  @apply bg-col-dark text-col-light m-0 flex min-h-screen flex-col p-0 font-normal;
+  @apply flex min-h-screen flex-col bg-col-dark pb-96 text-base font-normal text-col-light;
 }
 
+/* wrapper */
+.wrapper {
+  @apply mx-auto w-full max-w-[1640px];
+}
 .sections-wrapper {
-  @apply mx-auto w-full max-w-[1640px] px-2 pb-8 md:px-8 md:pb-16;
+  @apply wrapper px-2 pb-8 md:px-8 md:pb-16;
 }
-
 .hero-wrapper {
-  @apply mx-auto w-full max-w-[1640px] p-2 pt-6;
+  @apply wrapper p-2 pt-6;
 }
 
+/* border */
+.border {
+  @apply border-2 border-solid;
+}
 .border-dark {
-  @apply border-col-dark border-2 border-solid;
+  @apply border border-col-dark;
 }
-
 .border-light {
-  @apply border-col-light border-2 border-solid;
+  @apply border border-col-light;
+}
+.border-hover {
+  @apply border border-transparent hover:border-white;
+}
+.border-hover-blue {
+  @apply border-b-2 border-solid border-transparent hover:border-col-blue-dark;
 }
 
-.border-hover {
-  @apply border-2 border-solid border-transparent hover:border-white;
+/* text */
+.font-h2 {
+  @apply font-bold sm:text-[28px] sm:leading-8 sm:tracking-[-.25px] lg:text-4xl lg:leading-[44px] lg:tracking-[-.75px];
+}
+.font-h3 {
+  @apply font-medium sm:text-xl sm:leading-6 sm:tracking-[-.5px] lg:text-2xl lg:leading-[30px];
+}
+.font-h3-large {
+  @apply font-medium sm:text-[32px] sm:leading-8 sm:tracking-[-.8px];
+}
+.font-h5 {
+  @apply font-medium uppercase tracking-[.5px] sm:text-xs sm:leading-5;
+}
+.font-span {
+  @apply text-sm leading-6 tracking-[.2px];
+  font-family: serif;
+}
+.font-p {
+  @apply leading-6 sm:text-lg lg:text-base;
+}
+.font-more {
+  @apply cursor-pointer font-medium text-col-blue-dark;
+}
+.font-more-l {
+  @apply font-more border-hover-blue hidden text-xl leading-7;
+}
+.font-more-s {
+  @apply font-more block text-base leading-6;
 }

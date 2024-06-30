@@ -7,24 +7,17 @@ const SkillCard = (props: { title: string; label: string }) => (
       className="w-1/4 xl:h-32 xl:w-32 xl:self-end"
       src="https://io.google/2022/app/images/codelabs-logo.svg"
     />
-
     <header className="flex w-full flex-col justify-end">
-      <h5 className="font-medium uppercase leading-5 tracking-[.5px] sm:text-xs">
-        Codelab
-      </h5>
+      <h5 className="font-h5">Codelab</h5>
       <a
         target="_blank"
         rel="noopener noreferrer"
         href="https://codelabs.developers.google.com/codelabs/arcore-cloud-anchors"
       >
-        <h3 className="my-2.5 font-medium sm:text-[32px] sm:leading-8 sm:tracking-[-.8px]">
-          {props.title}
-        </h3>
+        <h3 className="font-h3-large my-2.5">{props.title}</h3>
       </a>
       <div className="mt-2 flex flex-row justify-between">
-        <span className="text-sm leading-6 tracking-[0.2px]">
-          {props.label}
-        </span>
+        <span className="font-span">{props.label}</span>
       </div>
     </header>
   </div>
@@ -32,19 +25,12 @@ const SkillCard = (props: { title: string; label: string }) => (
 
 const Skills = () => (
   <section className="pt-24 md:px-11">
-    <div className="mb-10 flex flex-col md:flex-row md:items-center md:justify-between">
-      <h2 className="mx-2 mb-10 font-semibold sm:text-[28px] sm:leading-8 sm:tracking-[-.25px] md:mx-0 md:mb-0 lg:text-[36px] lg:leading-[44px] lg:tracking-[-.75px]">
-        Grow your skills
-      </h2>
-      <a
-        href="/program"
-        rel="noopener"
-        className="hidden cursor-pointer font-medium text-col-blue-dark md:block md:text-xl md:leading-7"
-      >
+    <div className="mx-2 mb-20 flex flex-col md:mx-0 md:mb-10 md:flex-row md:items-end md:justify-between">
+      <h2 className="font-h2">Grow your skills</h2>
+      <a href="/program" rel="noopener" className="font-more-l md:block">
         See more
       </a>
     </div>
-
     <div className="mx-2 grid grid-cols-1 grid-rows-2 gap-8 sm_md:grid-rows-2 md:mx-0 md:grid-cols-2 xl:grid-cols-2">
       <SkillCard title="ARCore Augmented Images" label="Augmented Reality" />
       <SkillCard
@@ -57,13 +43,8 @@ const Skills = () => (
         label="Location/Maps Android"
       />
     </div>
-
     <div>
-      <a
-        href="/program"
-        rel="noopener"
-        className="block cursor-pointer px-2 text-base font-medium leading-6 text-col-blue-dark md:hidden"
-      >
+      <a href="/program" rel="noopener" className="font-more-s px-2 md:hidden">
         See more
       </a>
     </div>

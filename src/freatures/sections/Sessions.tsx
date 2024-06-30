@@ -16,33 +16,18 @@ const Session = (props: {
           src={props.imgSrc}
         />
       </div>
-
-      <h3 className="my-2 font-medium sm:text-xl sm:leading-6 sm:tracking-[-.5px] lg:text-2xl lg:leading-[30px]">
-        {props.title}
-      </h3>
-
-      <p className="my-2 leading-6 sm:text-lg lg:text-base">
-        {props.paragraph}
-      </p>
+      <h3 className="font-h3 my-2">{props.title}</h3>
+      <p className="font-p my-2">{props.paragraph}</p>
     </a>
-
-    <div className="flex flex-wrap gap-x-4 text-sm leading-6 tracking-[.2px]">
-      {props.label}
-    </div>
+    <div className="font-span flex flex-wrap gap-x-4">{props.label}</div>
   </div>
 );
 
 const Sessions = () => (
   <section className="pt-24 md:px-9">
-    <div className="mb-4 flex flex-col lg:flex-row lg:items-center lg:justify-between">
-      <h2 className="mx-2 font-semibold sm:text-[28px] sm:leading-[32px] sm:tracking-[-.25px] md:mx-0 lg:text-[36px] lg:leading-[44px] lg:tracking-[-.75px] xl:my-[28px] xl:mb-[28px]">
-        Featured sessions
-      </h2>
-      <a
-        href="/program"
-        rel="noopener"
-        className="hidden cursor-pointer font-medium text-col-blue-dark lg:text-xl xl:block"
-      >
+    <div className="mx-2 mb-4 flex flex-col items-center md:mx-0 lg:flex-row lg:justify-between xl:my-[28px] xl:mb-[44px]">
+      <h2 className="font-h2">Featured sessions</h2>
+      <a href="/program" rel="noopener" className="font-more-l xl:block">
         See full program
       </a>
     </div>
@@ -79,11 +64,7 @@ const Sessions = () => (
     </div>
 
     <div>
-      <a
-        href="/program"
-        rel="noopener"
-        className="block cursor-pointer text-base font-medium leading-6 text-col-blue-dark xl:hidden"
-      >
+      <a href="/program" rel="noopener" className="font-more-s xl:hidden">
         See full program
       </a>
     </div>
