@@ -6,6 +6,7 @@ import Keynotes from "./freatures/sections/Keynotes";
 import Main from "./freatures/Main";
 import Skills from "./freatures/sections/Skills";
 import Sections from "./freatures/Sections";
+import Products from "./freatures/sections/Products";
 
 const App = () => (
   <div className="app">
@@ -16,6 +17,7 @@ const App = () => (
         <Keynotes />
         <Sessions />
         <Skills />
+        <Products />
       </Sections>
     </Main>
     <Footer />
