@@ -6,6 +6,8 @@ export default {
       colors: {
         "col-dark": "#202124",
         "col-light-dark": "#5f6368",
+        "col-grey": "#9aa0a6",
+        "col-grey-dark": "#80868b",
         "col-light": "#e8eaed",
         "col-yellow-dark": "#f6bd41",
         "col-yellow-light": "#fcd56c",

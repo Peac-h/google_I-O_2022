@@ -1,7 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* @import "font.css"; */
 
 :root {
   font-family:
@@ -46,8 +45,8 @@
 .border-light {
   @apply border border-col-light;
 }
-.border-yellow {
-  @apply border border-col-yellow-light;
+.border-grey {
+  @apply border-col-grey-dark border-0 border-b border-solid;
 }
 .border-hover {
   @apply border border-transparent hover:border-white;
@@ -88,3 +87,21 @@
 .font-more-s {
   @apply font-more block text-base leading-6;
 }
+
+.language-select {
+  background-image: linear-gradient(45deg, transparent 50%, #80868b 0),
+    linear-gradient(135deg, #80868b 50%, transparent 0);
+  background-position:
+    calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px),
+    calc(100% - 2.5em) 0.5em;
+  background-size:
+    5px 5px,
+    5px 5px,
+    1px 1.5em;
+  padding-right: 25px;
+  background-repeat: no-repeat;
+}
+
+/* outline: 2px solid transparent;
+    outline-offset: 2px; #1a73e8; */
