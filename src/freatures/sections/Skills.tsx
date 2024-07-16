@@ -1,4 +1,4 @@
-const SkillCard = (props: { title: string; label: string }) => (
+const SkillCard = (props: { title: string; label: string[] }) => (
   <div className="border-hover flex flex-col justify-evenly rounded-2xl p-4 xl:flex-row xl:gap-4">
     <img
       loading="lazy"
@@ -16,35 +16,46 @@ const SkillCard = (props: { title: string; label: string }) => (
       >
         <h3 className="font-h3-large my-2.5">{props.title}</h3>
       </a>
-      <div className="mt-2 flex flex-row justify-between">
-        <span className="font-span">{props.label}</span>
+      <div className="mt-2 flex flex-row gap-4">
+        {props.label.map((label, i) => (
+          <span className="font-span" key={i}>
+            {label}
+          </span>
+        ))}
       </div>
     </header>
   </div>
 );
 
 const Skills = () => (
-  <section className="pt-24 md:px-11">
+  <section className="pt-24 text-white md:px-11">
     <div className="mx-2 mb-20 flex flex-col md:mx-0 md:mb-10 md:flex-row md:items-end md:justify-between">
       <h2 className="font-h2">Grow your skills</h2>
       <a href="/program" rel="noopener" className="font-more-l md:block">
         See more
       </a>
     </div>
-    <div className="mx-2 grid grid-cols-1 grid-rows-2 gap-8 sm_md:grid-rows-2 md:mx-0 md:grid-cols-2 xl:grid-cols-2">
-      <SkillCard title="ARCore Augmented Images" label="Augmented Reality" />
+    <div className="mx-2 grid grid-cols-1 grid-rows-4 gap-8 sm_md:grid-rows-2 md:mx-0 md:grid-cols-2 xl:grid-cols-2">
+      <SkillCard
+        title="ARCore Augmented Images"
+        label={["Augmented Reality"]}
+      />
       <SkillCard
         title="ARCore Cloud Anchors with Cloud Anchors"
-        label="Augmented Reality"
+        label={["Augmented Reality"]}
       />
-      <SkillCard title="ARCore Raw Depth API" label="Augmented Reality" />
+      <SkillCard title="ARCore Raw Depth API" label={["Augmented Reality"]} />
       <SkillCard
         title="Add a map to your Android app (Kotlin)"
-        label="Location/Maps Android"
+        label={["Location/Maps", "Android"]}
       />
     </div>
     <div>
-      <a href="/program" rel="noopener" className="font-more-s px-2 md:hidden">
+      <a
+        href="/program"
+        rel="noopener"
+        className="font-more-s mx-2 inline-block sm:text-xl md:hidden"
+      >
         See more
       </a>
     </div>

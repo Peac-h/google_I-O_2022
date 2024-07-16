@@ -22,7 +22,7 @@ const KeynoteCard = (props: {
         </div>
       </a>
       <div className="mt-auto flex justify-between">
-        <div className="font-span">
+        <div className="font-span-serif">
           <span>{props.label}</span>
         </div>
       </div>

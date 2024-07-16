@@ -31,9 +31,6 @@
 .sections-wrapper {
   @apply wrapper px-2 pb-8 md:px-8 md:pb-16;
 }
-.hero-wrapper {
-  @apply wrapper p-2 pt-6;
-}
 
 /* border */
 .border {
@@ -46,7 +43,7 @@
   @apply border border-col-light;
 }
 .border-grey {
-  @apply border-col-grey-dark border-0 border-b border-solid;
+  @apply border-0 border-b border-solid border-col-grey-dark;
 }
 .border-hover {
   @apply border border-transparent hover:border-white;
@@ -69,39 +66,24 @@
   @apply font-medium sm:text-[32px] sm:leading-8 sm:tracking-[-.8px];
 }
 .font-h5 {
-  @apply font-medium uppercase tracking-[.5px] sm:text-xs sm:leading-5;
+  @apply font-medium uppercase sm:text-xs sm:leading-5 sm:tracking-[.5px];
 }
-.font-span {
+.font-span-serif {
   @apply text-sm leading-6 tracking-[.2px];
   font-family: serif;
 }
+.font-span {
+  @apply text-sm leading-6 tracking-[.2px];
+}
 .font-p {
-  @apply leading-6 sm:text-lg lg:text-base;
+  @apply sm:text-lg sm:leading-6 lg:text-base;
 }
 .font-more {
-  @apply cursor-pointer font-medium text-col-blue-dark;
+  @apply border-hover-blue cursor-pointer rounded-sm font-medium text-col-blue-dark focus-within:outline focus-within:outline-2 focus-within:outline-[#8ab4f8] focus:outline focus:outline-2 focus:outline-[#8ab4f8] active:outline active:outline-2 active:outline-[#8ab4f8];
 }
 .font-more-l {
   @apply font-more border-hover-blue hidden text-xl leading-7;
 }
 .font-more-s {
-  @apply font-more block text-base leading-6;
+  @apply font-more border-hover-blue text-base leading-6;
 }
-
-.language-select {
-  background-image: linear-gradient(45deg, transparent 50%, #80868b 0),
-    linear-gradient(135deg, #80868b 50%, transparent 0);
-  background-position:
-    calc(100% - 20px) calc(1em + 2px),
-    calc(100% - 15px) calc(1em + 2px),
-    calc(100% - 2.5em) 0.5em;
-  background-size:
-    5px 5px,
-    5px 5px,
-    1px 1.5em;
-  padding-right: 25px;
-  background-repeat: no-repeat;
-}
-
-/* outline: 2px solid transparent;
-    outline-offset: 2px; #1a73e8; */

@@ -1,0 +1,25 @@
+.language-select {
+  background-image: linear-gradient(45deg, transparent 50%, #80868b 0),
+    linear-gradient(135deg, #80868b 50%, transparent 0);
+  background-position:
+    calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px),
+    calc(100% - 2.5em) 0.5em;
+  background-size:
+    5px 5px,
+    5px 5px,
+    1px 1.5em;
+  padding-right: 25px;
+  background-repeat: no-repeat;
+}
+.language-select:active,
+.language-select:focus,
+.language-select:focus-within {
+  outline: 2px solid transparent;
+  --tw-ring-color: #1a73e8;
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0
+    calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
+    var(--tw-shadow);
+  border-color: #1a73e8;
+}

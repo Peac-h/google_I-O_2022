@@ -24,6 +24,7 @@ const MobileNavButton = () => (
 const HeaderLogo = () => (
   <a href="/" className="mr-12">
     <img
+      className="h-[64px]"
       src="https://io.google/2022/app/images/Logo-dark.svg"
       height="64"
       width="154"

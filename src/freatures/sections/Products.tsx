@@ -4,7 +4,7 @@ const ProductCard = (props: {
   title: string;
 }) => (
   <a
-    className="xs:p-4 border-hover mx-auto flex w-40 flex-col items-center justify-around rounded-2xl p-2 sm_md:p-5 md:w-48"
+    className="border-hover mx-auto flex w-40 flex-col items-center justify-around rounded-2xl p-2 sm:p-4 sm_md:p-5 md:w-48"
     href={props.href}
   >
     <img src={props.imgSrc} role="img" aria-hidden="true" />
@@ -59,7 +59,11 @@ const Products = () => (
     </div>
 
     <div>
-      <a href="/products" rel="noopener" className="font-more-s xl:hidden">
+      <a
+        href="/products"
+        rel="noopener"
+        className="font-more-s inline-block sm:text-xl xl:hidden"
+      >
         See all products
       </a>
     </div>

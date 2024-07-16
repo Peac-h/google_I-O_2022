@@ -1,8 +1,11 @@
-const CloseButton = () => (
+import { useState } from "react";
+
+const CloseButton = (props: { onClick: () => void }) => (
   <button
     type="button"
     className="absolute bottom-0 right-4 top-0 flex items-center"
     aria-label="Close"
+    onClick={props.onClick}
   >
     <svg
       className="h-6 w-6 fill-col-light-dark"
@@ -64,65 +67,73 @@ const PausePlayButton = () => (
   </button>
 );
 
-const Hero = () => (
-  <div className="hero-wrapper flex flex-col gap-y-2">
-    <div className="border-light relative rounded-xl bg-col-yellow-dark py-4 text-center">
-      <p className="text-sm font-medium text-col-dark">
-        Tip: You can find bookmarked sessions in your{" "}
-        <a
-          href="https://developers.google.com/profile/u/me"
-          target="_blank"
-          className="underline"
-        >
-          Developer Profile
-        </a>
-        .
-      </p>
+const Hero = () => {
+  const [showTip, setShowTip] = useState(true);
 
-      <CloseButton />
-    </div>
+  return (
+    <div
+      className={`wrapper flex flex-col gap-y-2 p-2 ${showTip ? "pt-6" : ""}`}
+    >
+      {showTip && (
+        <div className="border-light relative rounded-xl bg-col-yellow-dark py-4 text-center">
+          <p className="text-sm font-medium text-col-dark">
+            Tip: You can find bookmarked sessions in your{" "}
+            <a
+              href="https://developers.google.com/profile/u/me"
+              target="_blank"
+              className="underline"
+            >
+              Developer Profile
+            </a>
+            .
+          </p>
 
-    <div className="flex flex-col gap-x-2 gap-y-2 md:flex-row md:gap-y-0">
-      <div className="border-dark relative flex flex-col items-center overflow-hidden rounded-lg bg-col-yellow-light md:w-2/3 md:flex-row">
-        <div className="flex flex-1">
-          <div className="hidden w-full self-end md:block md:h-[407px]">
-            <PausePlayButton />
+          <CloseButton onClick={() => setShowTip(false)} />
+        </div>
+      )}
+
+      <div className="flex flex-col gap-x-2 gap-y-2 md:flex-row md:gap-y-0">
+        <div className="border-dark relative flex flex-col items-center overflow-hidden rounded-lg bg-col-yellow-light md:w-2/3 md:flex-row">
+          <div className="flex flex-1">
+            <div className="hidden w-full self-end md:block md:h-[407px]">
+              <PausePlayButton />
+            </div>
+
+            <div className="m-auto block self-center md:hidden">
+              <img
+                src="https://io.google/2022/app/images/homepage-header-static.svg"
+                width="343"
+                height="222"
+              />
+            </div>
           </div>
+        </div>
 
-          <div className="m-auto block self-center md:hidden">
-            <img
-              src="https://io.google/2022/app/images/homepage-header-static.svg"
-              width="343"
-              height="222"
-            />
+        <div className="border-dark flex w-full flex-col justify-between rounded-xl bg-col-blue p-6 text-col-dark lg:min-w-[550px] xl:w-1/3">
+          <h2 className="font-h2-large w-5/6">
+            And that's a wrap!
+            <br />
+            Thanks for joining Google I/O 2022.
+          </h2>
+          <div className="pt-20">
+            <div className="sm:text-xl">
+              <p>
+                <a
+                  href="https://www.youtube.com/watch?v=CWTm0ccfZe4&amp;list=TLGGLYR0fesogp0xMjA1MjAyMg"
+                  rel="noreferrer"
+                  target="_blank"
+                  aria-label="I/O '22 recap"
+                  className="mt-4 underline md:mb-4 md:mt-0"
+                >
+                  Watch the I/O 2022 recap
+                </a>
+              </p>
+            </div>
           </div>
         </div>
       </div>
-
-      <div className="border-dark flex w-full flex-col justify-between rounded-xl bg-col-blue p-6 text-col-dark lg:min-w-[550px] xl:w-1/3">
-        <h2 className="font-h2-large w-5/6">
-          And that's a wrap!
-          <br />
-          Thanks for joining Google I/O 2022.
-        </h2>
-        <div className="pt-20">
-          <div className="sm:text-xl">
-            <p>
-              <a
-                href="https://www.youtube.com/watch?v=CWTm0ccfZe4&amp;list=TLGGLYR0fesogp0xMjA1MjAyMg"
-                rel="noreferrer"
-                target="_blank"
-                aria-label="I/O '22 recap"
-                className="mt-4 underline md:mb-4 md:mt-0"
-              >
-                Watch the I/O 2022 recap
-              </a>
-            </p>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default Hero;
