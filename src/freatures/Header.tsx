@@ -116,7 +116,7 @@ const Menu = () => {
 
 const LanguageSelect = () => (
   <div className="ml-auto flex">
-    <div className="lg_xl:block hidden">
+    <div className="hidden lg_xl:block">
       <select
         name="language-select"
         className="language-select w-32 appearance-none bg-transparent py-2 font-medium text-white"
@@ -131,8 +131,10 @@ const LanguageSelect = () => (
           { abb: "ko", lang: "한국어" },
           { abb: "zh", lang: "中文" },
           { abb: "ja", lang: "日本語" },
-        ].map((option) => (
-          <option value={option.abb}>{option.lang}</option>
+        ].map((option, i) => (
+          <option value={option.abb} key={i}>
+            {option.lang}
+          </option>
         ))}
       </select>
     </div>

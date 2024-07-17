@@ -1,0 +1,26 @@
+@keyframes translateXAnimation {
+  0% {
+    transform: translateX(100%);
+  }
+  25% {
+    transform: translateX(0%);
+  }
+  30% {
+    transform: translateX(0%);
+  }
+  80%,
+  100% {
+    transform: translateX(-200%);
+  }
+}
+
+.animation-firstEl {
+  animation: translateXAnimation 20s linear infinite;
+}
+.animation-secondEl {
+  animation: translateXAnimation 20s linear infinite;
+  animation-delay: 10s;
+}
+.paused {
+  animation-play-state: paused;
+}

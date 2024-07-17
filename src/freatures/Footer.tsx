@@ -28,8 +28,10 @@ const LanguageSelect = () => (
       { abb: "ko", lang: "한국어" },
       { abb: "zh", lang: "中文" },
       { abb: "ja", lang: "日本語" },
-    ].map((option) => (
-      <option value={option.abb}>{option.lang}</option>
+    ].map((option, i) => (
+      <option value={option.abb} key={i}>
+        {option.lang}
+      </option>
     ))}
   </select>
 );
