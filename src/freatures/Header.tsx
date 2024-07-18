@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
+import LanguageDropdown from "../ui/LanguageDropdown";
 
 const MobileNavButton = () => (
   <nav className="block xl:hidden">
@@ -118,40 +119,17 @@ const Menu = () => {
   );
 };
 
-const LanguageSelect = () => (
-  <div className="ml-auto flex">
-    <div className="hidden lg_xl:block">
-      <select
-        name="language-select"
-        className="language-select w-32 appearance-none bg-transparent py-2 font-medium text-col-dark dark:text-white"
-        defaultValue="en"
-      >
-        {[
-          { abb: "en", lang: "English" },
-          { abb: "es", lang: "Español" },
-          { abb: "pt", lang: "Português" },
-          { abb: "fr", lang: "Français" },
-          { abb: "id", lang: "Indonesia" },
-          { abb: "ko", lang: "한국어" },
-          { abb: "zh", lang: "中文" },
-          { abb: "ja", lang: "日本語" },
-        ].map((option, i) => (
-          <option value={option.abb} key={i}>
-            {option.lang}
-          </option>
-        ))}
-      </select>
-    </div>
-  </div>
-);
-
 const Header = (props: { isDarkMode: boolean }) => (
   <header className="border-b-2 border-col-dark xl:border-b-0 dark:border-white">
     <nav className="flex items-center py-3 md:px-8">
       <MobileNavButton />
       <HeaderLogo isDarkMode={props.isDarkMode} />
       <Menu />
-      <LanguageSelect />
+      <div className="ml-auto flex">
+        <div className="hidden lg_xl:block">
+          <LanguageDropdown className="text-col-dark dark:text-white" />
+        </div>
+      </div>
     </nav>
   </header>
 );
