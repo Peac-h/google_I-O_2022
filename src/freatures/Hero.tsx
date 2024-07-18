@@ -1129,7 +1129,7 @@ const Hero = () => {
       )}
 
       <div className="flex flex-col gap-x-2 gap-y-2 md:flex-row md:gap-y-0">
-        <div className="border-dark relative flex flex-col items-center overflow-hidden rounded-lg bg-col-yellow-light md:w-2/3 md:flex-row">
+        <div className="border-dark relative flex flex-col items-center overflow-hidden rounded-lg bg-col-yellow-dark md:w-2/3 md:flex-row dark:bg-col-yellow-light">
           <div className="flex flex-1">
             <AnimationSVG />
 
@@ -1143,7 +1143,7 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="border-dark flex w-full flex-col justify-between rounded-xl bg-col-blue p-6 text-col-dark lg:min-w-[550px] xl:w-1/3">
+        <div className="border-dark bg-col-blue-darker flex w-full flex-col justify-between rounded-xl p-6 text-col-dark lg:min-w-[550px] xl:w-1/3 dark:bg-col-blue">
           <h2 className="font-h2-large w-5/6">
             And that's a wrap!
             <br />

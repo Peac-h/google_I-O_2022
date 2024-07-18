@@ -1,5 +1,5 @@
 const Recap = () => (
-  <section className="border-dark mt-2 flex flex-col rounded-lg bg-col-yellow-light p-6 text-col-dark md:flex-row md:p-10">
+  <section className="border-dark mt-2 flex flex-col rounded-lg bg-col-yellow-dark p-6 text-col-dark md:flex-row md:p-10 dark:bg-col-yellow-light">
     <div className="flex h-full flex-1 flex-col">
       <h2 className="font-h2-large">I/O '22 recap</h2>
       <div className="my-6 text-left text-lg font-medium md:mr-24 md:text-xl xl:mr-32">

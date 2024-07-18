@@ -12,7 +12,9 @@ export default {
         "col-yellow-dark": "#f6bd41",
         "col-yellow-light": "#fcd56c",
         "col-blue": "#93c5fd",
+        "col-blue-sec": "#1a73e8",
         "col-blue-dark": "#8ab4f8",
+        "col-blue-darker": "#538EF7",
       },
     },
     screens: {
@@ -25,4 +27,5 @@ export default {
     },
   },
   plugins: [],
+  darkMode: "selector",
 };

@@ -28,7 +28,7 @@ const SkillCard = (props: { title: string; label: string[] }) => (
 );
 
 const Skills = () => (
-  <section className="pt-24 text-white md:px-11">
+  <section className="pt-24 text-col-dark md:px-11 dark:text-white">
     <div className="mx-2 mb-20 flex flex-col md:mx-0 md:mb-10 md:flex-row md:items-end md:justify-between">
       <h2 className="font-h2">Grow your skills</h2>
       <a href="/program" rel="noopener" className="font-more-l md:block">

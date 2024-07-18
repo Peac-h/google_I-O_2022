@@ -15,7 +15,7 @@ const MobileNavButton = () => (
             fillRule="evenodd"
             clipRule="evenodd"
             d="M3 18H21V16H3V18ZM3 13H21V11H3V13ZM3 6V8H21V6H3Z"
-            className="fill-col-light"
+            className="fill-col-dark dark:fill-col-light"
           ></path>
         </svg>
       </button>
@@ -23,11 +23,15 @@ const MobileNavButton = () => (
   </nav>
 );
 
-const HeaderLogo = () => (
+const HeaderLogo = (props: { isDarkMode: boolean }) => (
   <a href="/" className="mr-12">
     <img
       className="h-[64px]"
-      src="https://io.google/2022/app/images/Logo-dark.svg"
+      src={
+        props.isDarkMode
+          ? "https://io.google/2022/app/images/Logo-dark.svg"
+          : "https://io.google/2022/app/images/Logo.svg"
+      }
       height="64"
       width="154"
     />
@@ -90,17 +94,17 @@ const Menu = () => {
                   fillRule="evenodd"
                   clipRule="evenodd"
                   d="M1.84754 0.22168L5.29004 3.65668L8.73254 0.22168L9.79004 1.27918L5.29004 5.77918L0.790039 1.27918L1.84754 0.22168Z"
-                  className="fill-col-light"
+                  className="fill-col-dark dark:fill-col-light"
                 ></path>
               </svg>
               <div
-                className={`absolute top-8 z-20 flex-col items-start rounded-2xl border-2 border-white bg-col-dark p-4 text-col-light ${openDropdown === index ? "flex" : "hidden"}`}
+                className={`absolute top-8 z-20 flex-col items-start rounded-2xl border-2 border-col-dark bg-white p-4 text-col-dark dark:border-white dark:bg-col-dark dark:text-col-light ${openDropdown === index ? "flex" : "hidden"}`}
               >
                 {item.dropdown?.map((dropdownItem, dropdownIndex) => (
                   <a
                     key={dropdownIndex}
                     href="/"
-                    className="mb-4 border-b-2 pb-1"
+                    className="mb-4 border-b-2 border-col-dark pb-1 dark:border-white"
                   >
                     {dropdownItem}
                   </a>
@@ -119,7 +123,7 @@ const LanguageSelect = () => (
     <div className="hidden lg_xl:block">
       <select
         name="language-select"
-        className="language-select w-32 appearance-none bg-transparent py-2 font-medium text-white"
+        className="language-select w-32 appearance-none bg-transparent py-2 font-medium text-col-dark dark:text-white"
         defaultValue="en"
       >
         {[
@@ -141,11 +145,11 @@ const LanguageSelect = () => (
   </div>
 );
 
-const Header = () => (
-  <header className="border-b-2 border-white xl:border-b-0">
+const Header = (props: { isDarkMode: boolean }) => (
+  <header className="border-b-2 border-col-dark xl:border-b-0 dark:border-white">
     <nav className="flex items-center py-3 md:px-8">
       <MobileNavButton />
-      <HeaderLogo />
+      <HeaderLogo isDarkMode={props.isDarkMode} />
       <Menu />
       <LanguageSelect />
     </nav>
