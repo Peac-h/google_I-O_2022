@@ -2,6 +2,9 @@ import { useCallback, useEffect, useState } from "react";
 import LanguageDropdown from "../ui/LanguageDropdown";
 import { useDarkMode } from "../context/useDarkMode";
 
+import logoDark from "../assets/Logo-dark.svg";
+import logo from "../assets/Logo.svg";
+
 const menuItems = [
   { label: "Program", dropdown: ["Overview", "Speakers"] },
   { label: "Products", link: "/" },
@@ -17,11 +20,7 @@ const HeaderLogo = () => {
     <a href="/" className="mr-12">
       <img
         className="h-[64px]"
-        src={
-          isDarkMode
-            ? "https://io.google/2022/app/images/Logo-dark.svg"
-            : "https://io.google/2022/app/images/Logo.svg"
-        }
+        src={isDarkMode ? logoDark : logo}
         height="64"
         width="154"
       />

@@ -1,6 +1,8 @@
 import { useState } from "react";
 import "./Hero.css";
 
+import staticHeader from "../assets/homepage-header-static.svg";
+
 const CloseButton = (props: { onClick: () => void }) => (
   <button
     type="button"
@@ -1114,11 +1116,7 @@ const Hero = () => {
         <div className="border-light bg-col-yellow-2 relative rounded-xl py-4 text-center">
           <p className="text-col-black-1 text-sm font-medium">
             Tip: You can find bookmarked sessions in your{" "}
-            <a
-              href="https://developers.google.com/profile/u/me"
-              target="_blank"
-              className="underline"
-            >
+            <a href="/" target="_blank" className="underline">
               Developer Profile
             </a>
             .
@@ -1134,11 +1132,7 @@ const Hero = () => {
             <AnimationSVG />
 
             <div className="m-auto block self-center md:hidden">
-              <img
-                src="https://io.google/2022/app/images/homepage-header-static.svg"
-                width="343"
-                height="222"
-              />
+              <img src={staticHeader} width="343" height="222" />
             </div>
           </div>
         </div>
@@ -1153,7 +1147,7 @@ const Hero = () => {
             <div className="sm:text-xl">
               <p>
                 <a
-                  href="https://www.youtube.com/watch?v=CWTm0ccfZe4&amp;list=TLGGLYR0fesogp0xMjA1MjAyMg"
+                  href="/"
                   rel="noreferrer"
                   target="_blank"
                   aria-label="I/O '22 recap"

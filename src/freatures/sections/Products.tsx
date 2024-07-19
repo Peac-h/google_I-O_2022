@@ -1,3 +1,10 @@
+import accessibilityLogo from "../../assets/accessibility-logo.svg";
+import androidLogo from "../../assets/android-logo.svg";
+import arcoreLogo from "../../assets/arcore-logo.svg";
+import chromeLogo from "../../assets/chrome-logo.svg";
+import firebaseLogo from "../../assets/firebase-logo.svg";
+import flutterLogo from "../../assets/flutter-logo.svg";
+
 const ProductCard = (props: {
   href: string;
   imgSrc: string;
@@ -28,34 +35,14 @@ const Products = () => (
     <div className="my-12 grid grid-cols-2 gap-2 sm_md:grid-cols-3 md:grid-cols-4 xl:grid-cols-6">
       <ProductCard
         href="/accessibility"
-        imgSrc="https://io.google/2022/app/images/accessibility-logo.svg"
+        imgSrc={accessibilityLogo}
         title="Accessibility"
       />
-      <ProductCard
-        href="/android"
-        imgSrc="https://io.google/2022/app/images/android-logo.svg"
-        title="Android"
-      />
-      <ProductCard
-        href="/arcore"
-        imgSrc="https://io.google/2022/app/images/arcore-logo.svg"
-        title="ARCore"
-      />
-      <ProductCard
-        href="/chrome-os"
-        imgSrc="https://io.google/2022/app/images/chrome-logo.svg"
-        title="Chrome OS"
-      />
-      <ProductCard
-        href="/firebase"
-        imgSrc="https://io.google/2022/app/images/firebase-logo.svg"
-        title="Firebase"
-      />
-      <ProductCard
-        href="/flutter"
-        imgSrc="https://io.google/2022/app/images/flutter-logo.svg"
-        title="Flutter"
-      />
+      <ProductCard href="/android" imgSrc={androidLogo} title="Android" />
+      <ProductCard href="/arcore" imgSrc={arcoreLogo} title="ARCore" />
+      <ProductCard href="/chrome-os" imgSrc={chromeLogo} title="Chrome OS" />
+      <ProductCard href="/firebase" imgSrc={firebaseLogo} title="Firebase" />
+      <ProductCard href="/flutter" imgSrc={flutterLogo} title="Flutter" />
     </div>
 
     <div>

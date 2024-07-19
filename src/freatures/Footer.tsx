@@ -1,6 +1,12 @@
 import { useDarkMode } from "../context/useDarkMode";
 import LanguageDropdown from "../ui/LanguageDropdown";
 
+import logoTwitter from "../assets/ic_twitter.svg";
+import logoFacebook from "../assets/ic_facebook.svg";
+import logoGoogledev from "../assets/ic_googledev.svg";
+import logoYoutube from "../assets/ic_youtube.svg";
+import logoMedium from "../assets/ic_medium.svg";
+
 const ModeButtonSwitch = () => {
   const { toggleDarkMode } = useDarkMode();
 
@@ -49,49 +55,19 @@ const Footer = () => (
 
     <div className="mt-12 flex items-center space-x-6 xl:mt-0 xl:justify-end xl:justify-self-end">
       <a href="/">
-        <img
-          src="https://io.google/2022/app/images/ic_twitter.svg"
-          role="img"
-          aria-hidden="true"
-          height="24"
-          width="24"
-        />
+        <img src={logoTwitter} role="img" height="24" width="24" />
       </a>
       <a href="/">
-        <img
-          src="https://io.google/2022/app/images/ic_facebook.svg"
-          role="img"
-          aria-hidden="true"
-          height="24"
-          width="24"
-        />
+        <img src={logoFacebook} role="img" height="24" width="24" />
       </a>
       <a href="/">
-        <img
-          src="https://io.google/2022/app/images/ic_googledev.svg"
-          role="img"
-          aria-hidden="true"
-          height="24"
-          width="24"
-        />
+        <img src={logoGoogledev} role="img" height="24" width="24" />
       </a>
       <a href="/">
-        <img
-          src="https://io.google/2022/app/images/ic_youtube.svg"
-          role="img"
-          aria-hidden="true"
-          height="24"
-          width="24"
-        />
+        <img src={logoYoutube} role="img" height="24" width="24" />
       </a>
       <a href="/">
-        <img
-          src="https://io.google/2022/app/images/ic_medium.svg"
-          role="img"
-          aria-hidden="true"
-          height="24"
-          width="24"
-        />
+        <img src={logoMedium} role="img" height="24" width="24" />
       </a>
       <div className="hidden xl:flex">
         <ModeButtonSwitch />

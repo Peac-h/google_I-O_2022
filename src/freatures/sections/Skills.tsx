@@ -1,3 +1,5 @@
+import codelabLogo from "../../assets/codelabs-logo.svg";
+
 const SkillCard = (props: { title: string; label: string[] }) => (
   <div className="border-hover flex flex-col justify-evenly rounded-2xl p-4 xl:flex-row xl:gap-4">
     <img
@@ -5,15 +7,11 @@ const SkillCard = (props: { title: string; label: string[] }) => (
       role="img"
       aria-hidden="true"
       className="w-1/4 xl:h-32 xl:w-32 xl:self-end"
-      src="https://io.google/2022/app/images/codelabs-logo.svg"
+      src={codelabLogo}
     />
     <header className="flex w-full flex-col justify-end">
       <h5 className="font-h5">Codelab</h5>
-      <a
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://codelabs.developers.google.com/codelabs/arcore-cloud-anchors"
-      >
+      <a target="_blank" rel="noopener noreferrer" href="/">
         <h3 className="font-h3-large my-2.5">{props.title}</h3>
       </a>
       <div className="mt-2 flex flex-row gap-4">

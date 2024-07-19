@@ -1,3 +1,6 @@
+import keynoteImgLeft from "../../assets/8e80903f-955f-4a5b-9118-b0ce4acdb0e6.webp";
+import keynoteImgRight from "../../assets/0209f281-0b0e-4339-9e7a-a501e36f03c7.webp";
+
 const KeynoteCard = (props: {
   href: string;
   imgSrc: string;
@@ -36,13 +39,13 @@ const Keynotes = () => (
     <div className="grid grid-cols-1 gap-x-8 md:grid-cols-2">
       <KeynoteCard
         href="/2022/program/8e80903f-955f-4a5b-9118-b0ce4acdb0e6/"
-        imgSrc="https://io.google/2022/data/im/8e80903f-955f-4a5b-9118-b0ce4acdb0e6.webp"
+        imgSrc={keynoteImgLeft}
         title="Google I/O keynote"
         label="Keynote"
       />
       <KeynoteCard
         href="/2022/program/0209f281-0b0e-4339-9e7a-a501e36f03c7/"
-        imgSrc="https://io.google/2022/data/im/0209f281-0b0e-4339-9e7a-a501e36f03c7.webp"
+        imgSrc={keynoteImgRight}
         title="Developer keynote"
         label="Keynote"
       />
