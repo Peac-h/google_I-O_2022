@@ -21,7 +21,7 @@
 }
 
 body {
-  @apply flex min-h-screen flex-col bg-white text-base font-normal text-col-dark dark:bg-col-dark dark:text-col-light;
+  @apply text-col-black-1 dark:bg-col-black-1 dark:text-col-grey-1 flex min-h-screen flex-col bg-white text-base font-normal;
 }
 
 /* wrapper */
@@ -37,16 +37,16 @@ body {
   @apply border-2 border-solid;
 }
 .border-dark {
-  @apply border border-col-dark;
+  @apply border-col-black-1 border;
 }
 .border-light {
-  @apply border border-col-dark dark:border-col-light;
+  @apply border-col-black-1 dark:border-col-grey-1 border;
 }
 .border-hover {
-  @apply border border-transparent hover:border-col-dark dark:hover:border-white;
+  @apply hover:border-col-black-1 border border-transparent dark:hover:border-white;
 }
 .border-hover-blue {
-  @apply border-b-2 border-solid border-transparent hover:border-col-blue-sec dark:hover:border-col-blue-dark;
+  @apply hover:border-col-blue-4 dark:hover:border-col-blue-2 border-b-2 border-solid border-transparent;
 }
 
 /* text */
@@ -76,7 +76,7 @@ body {
   @apply sm:text-lg sm:leading-6 lg:text-base;
 }
 .font-more {
-  @apply border-hover-blue cursor-pointer rounded-sm font-medium text-col-blue-sec focus-within:outline focus-within:outline-2 focus-within:outline-col-blue-sec focus:outline focus:outline-2 focus:outline-col-blue-sec active:outline active:outline-2 active:outline-col-blue-sec dark:text-col-blue-dark dark:focus-within:outline-col-blue-dark dark:focus:outline-col-blue-dark dark:active:outline-col-blue-dark;
+  @apply border-hover-blue text-col-blue-4 focus-within:outline-col-blue-4 focus:outline-col-blue-4 active:outline-col-blue-4 dark:text-col-blue-2 dark:focus-within:outline-col-blue-2 dark:focus:outline-col-blue-2 dark:active:outline-col-blue-2 cursor-pointer rounded-sm font-medium focus-within:outline focus-within:outline-2 focus:outline focus:outline-2 active:outline active:outline-2;
 }
 .font-more-l {
   @apply font-more border-hover-blue hidden text-xl leading-7;

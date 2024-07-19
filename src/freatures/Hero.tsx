@@ -9,7 +9,7 @@ const CloseButton = (props: { onClick: () => void }) => (
     onClick={props.onClick}
   >
     <svg
-      className="h-6 w-6 fill-col-light-dark"
+      className="fill-col-grey-5 h-6 w-6"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 18 18"
     >
@@ -24,7 +24,7 @@ const AnimationSVG = () => {
   return (
     <div className="hidden w-full self-end md:block md:h-[407px]">
       <button
-        className="border-dark group absolute right-4 top-4 z-30 rounded-full p-2 transition duration-200 ease-linear hover:bg-col-dark"
+        className="border-dark hover:bg-col-black-1 group absolute right-4 top-4 z-30 rounded-full p-2 transition duration-200 ease-linear"
         aria-label="pause animation"
         onClick={() => setIsPaused(!isPaused)}
       >
@@ -49,7 +49,7 @@ const AnimationSVG = () => {
               fillRule="evenodd"
               clipRule="evenodd"
               d="M13.8923 18.6212H17.6758V5.37885H13.8923V18.6212ZM6.3252 18.6213H10.1087V5.37893H6.3252V18.6213Z"
-              className="fill-col-light"
+              className="fill-col-grey-1"
             ></path>
           </mask>
           <g mask="url(#mask0_2820_92651)">
@@ -58,7 +58,7 @@ const AnimationSVG = () => {
               y="0.649414"
               width="22.7012"
               height="22.7012"
-              className="fill-col-dark group-hover:fill-col-light"
+              className="fill-col-black-1 group-hover:fill-col-grey-1"
             ></rect>
           </g>
         </svg>
@@ -73,7 +73,7 @@ const AnimationSVG = () => {
           <path d="M0 0h24v24H0z" fill="none"></path>
           <path
             d="M8 5v14l11-7z"
-            className="fill-col-dark group-hover:fill-col-light"
+            className="fill-col-black-1 group-hover:fill-col-grey-1"
           ></path>
         </svg>
       </button>
@@ -1111,8 +1111,8 @@ const Hero = () => {
       className={`wrapper flex flex-col gap-y-2 p-2 ${showTip ? "pt-6" : ""}`}
     >
       {showTip && (
-        <div className="border-light relative rounded-xl bg-col-yellow-dark py-4 text-center">
-          <p className="text-sm font-medium text-col-dark">
+        <div className="border-light bg-col-yellow-2 relative rounded-xl py-4 text-center">
+          <p className="text-col-black-1 text-sm font-medium">
             Tip: You can find bookmarked sessions in your{" "}
             <a
               href="https://developers.google.com/profile/u/me"
@@ -1129,7 +1129,7 @@ const Hero = () => {
       )}
 
       <div className="flex flex-col gap-x-2 gap-y-2 md:flex-row md:gap-y-0">
-        <div className="border-dark relative flex flex-col items-center overflow-hidden rounded-lg bg-col-yellow-dark md:w-2/3 md:flex-row dark:bg-col-yellow-light">
+        <div className="border-dark bg-col-yellow-2 dark:bg-col-yellow-1 relative flex flex-col items-center overflow-hidden rounded-lg md:w-2/3 md:flex-row">
           <div className="flex flex-1">
             <AnimationSVG />
 
@@ -1143,7 +1143,7 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="border-dark flex w-full flex-col justify-between rounded-xl bg-col-blue-darker p-6 text-col-dark lg:min-w-[550px] xl:w-1/3 dark:bg-col-blue">
+        <div className="border-dark text-col-black-1 bg-col-blue-3 dark:bg-col-blue-1 flex w-full flex-col justify-between rounded-xl p-6 lg:min-w-[550px] xl:w-1/3">
           <h2 className="font-h2-large w-5/6">
             And that's a wrap!
             <br />

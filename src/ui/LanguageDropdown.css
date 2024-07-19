@@ -26,7 +26,7 @@
 }
 
 .language-dropdown--footer {
-  @apply mt-8 w-56 border-0 border-b border-solid border-col-grey-dark text-col-grey-dark xl:mt-0;
+  @apply border-col-grey-4 text-col-grey-4 mt-8 w-56 border-0 border-b border-solid xl:mt-0;
 }
 .language-dropdown--header {
   @apply ml-auto hidden lg_xl:block;

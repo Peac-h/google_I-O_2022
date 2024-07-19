@@ -4,18 +4,19 @@ export default {
   theme: {
     extend: {
       colors: {
-        "col-dark": "#202124",
-        "col-light-dark": "#5f6368",
-        "col-grey": "#9aa0a6",
-        "col-grey-dark": "#80868b",
-        "col-light": "#e8eaed",
-        "col-yellow-dark": "#f6bd41",
-        "col-yellow-light": "#fcd56c",
-        "col-blue": "#93c5fd",
-        "col-blue-sec": "#1a73e8",
-        "col-blue-dark": "#8ab4f8",
-        "col-blue-darker": "#538EF7",
-        "col-white-dark": "#E3E3E3",
+        "col-black-1": "#202124",
+        "col-grey-5": "#5f6368",
+        "col-grey-4": "#80868b",
+        "col-grey-3": "#9aa0a6",
+        "col-grey-2": "#e3e3e3",
+        "col-grey-1": "#e8eaed",
+        "col-yellow-2": "#f6bd41",
+        "col-yellow-1": "#fcd56c",
+
+        "col-blue-4": "#1a73e8",
+        "col-blue-3": "#538EF7",
+        "col-blue-2": "#8ab4f8",
+        "col-blue-1": "#93c5fd",
       },
     },
     screens: {

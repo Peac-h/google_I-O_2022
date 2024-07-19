@@ -68,14 +68,14 @@ const MobileNav = () => {
               fillRule="evenodd"
               clipRule="evenodd"
               d="M3 18H21V16H3V18ZM3 13H21V11H3V13ZM3 6V8H21V6H3Z"
-              className="fill-col-dark dark:fill-col-light"
+              className="fill-col-black-1 dark:fill-col-grey-1"
             ></path>
           </svg>
         </button>
       </div>
 
       <div className={openMobileMenu ? "block" : "hidden"}>
-        <div className="mobileNav fixed left-0 top-0 z-50 flex h-full w-[19rem] max-w-full flex-col gap-4 overflow-y-scroll bg-white dark:bg-col-dark">
+        <div className="mobileNav dark:bg-col-black-1 fixed left-0 top-0 z-50 flex h-full w-[19rem] max-w-full flex-col gap-4 overflow-y-scroll bg-white">
           <HeaderLogo />
 
           <Menu isMobile={true} />
@@ -107,7 +107,7 @@ const MobileMenu = (props: {
           ) : (
             <div>
               <button
-                className={`flex w-full justify-between p-5 py-4 ${props.openDropdown === index ? "rounded-r-full bg-col-white-dark text-col-dark" : ""}`}
+                className={`flex w-full justify-between p-5 py-4 ${props.openDropdown === index ? "text-col-black-1 bg-col-grey-2 rounded-r-full" : ""}`}
                 onClick={() => props.onDropdownToggle(index)}
               >
                 <span>{item.label}</span>
@@ -130,7 +130,7 @@ const MobileMenu = (props: {
                   >
                     <path
                       d="M4.39666 5.05957L3.45667 5.99957L8.79 11.3329L14.1233 5.99957L13.1833 5.05957L8.79 9.44624"
-                      className={`fill-col-dark ${props.openDropdown === index ? "" : "dark:fill-col-light"}`}
+                      className={`fill-col-black-1 ${props.openDropdown === index ? "" : "dark:fill-col-grey-1"}`}
                     ></path>
                   </mask>
                   <g mask="url(#mask0_672_74360)">
@@ -138,21 +138,21 @@ const MobileMenu = (props: {
                       x="0.790039"
                       width="16"
                       height="16"
-                      className={`fill-col-dark ${props.openDropdown === index ? "" : "dark:fill-col-light"}`}
+                      className={`fill-col-black-1 ${props.openDropdown === index ? "" : "dark:fill-col-grey-1"}`}
                     ></rect>
                   </g>
                 </svg>
               </button>
 
               <div
-                className={`flex-col items-start px-10 pt-4 text-col-dark dark:border-white dark:bg-col-dark dark:text-col-light ${props.openDropdown === index ? "flex" : "hidden"}`}
+                className={`text-col-black-1 dark:bg-col-black-1 dark:text-col-grey-1 flex-col items-start px-10 pt-4 dark:border-white ${props.openDropdown === index ? "flex" : "hidden"}`}
               >
                 {item.dropdown?.map(
                   (dropdownItem: string, dropdownIndex: number) => (
                     <a
                       key={dropdownIndex}
                       href="/"
-                      className="mb-6 border-b-2 border-col-dark pb-1 last:mb-4 dark:border-white"
+                      className="border-col-black-1 mb-6 border-b-2 pb-1 last:mb-4 dark:border-white"
                     >
                       {dropdownItem}
                     </a>
@@ -195,17 +195,17 @@ const DesktopMenu = (props: {
                   fillRule="evenodd"
                   clipRule="evenodd"
                   d="M1.84754 0.22168L5.29004 3.65668L8.73254 0.22168L9.79004 1.27918L5.29004 5.77918L0.790039 1.27918L1.84754 0.22168Z"
-                  className="fill-col-dark dark:fill-col-light"
+                  className="fill-col-black-1 dark:fill-col-grey-1"
                 ></path>
               </svg>
               <div
-                className={`absolute top-8 z-20 flex-col items-start rounded-2xl border-2 border-col-dark bg-white p-4 text-col-dark dark:border-white dark:bg-col-dark dark:text-col-light ${props.openDropdown === index ? "flex" : "hidden"}`}
+                className={`border-col-black-1 text-col-black-1 dark:bg-col-black-1 dark:text-col-grey-1 absolute top-8 z-20 flex-col items-start rounded-2xl border-2 bg-white p-4 dark:border-white ${props.openDropdown === index ? "flex" : "hidden"}`}
               >
                 {item.dropdown?.map((dropdownItem, dropdownIndex) => (
                   <a
                     key={dropdownIndex}
                     href="/"
-                    className="mb-4 border-b-2 border-col-dark pb-1 dark:border-white"
+                    className="border-col-black-1 mb-4 border-b-2 pb-1 dark:border-white"
                   >
                     {dropdownItem}
                   </a>
@@ -256,7 +256,7 @@ const Menu = (props: { isMobile?: boolean }) => {
 };
 
 const Header = () => (
-  <header className="border-b-2 border-col-dark xl:border-b-0 dark:border-white">
+  <header className="border-col-black-1 border-b-2 xl:border-b-0 dark:border-white">
     <nav className="flex items-center py-3 md:px-8">
       <MobileNav />
       <HeaderLogo />
