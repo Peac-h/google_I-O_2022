@@ -29,7 +29,7 @@
   @apply border-col-grey-4 text-col-grey-4 mt-8 w-56 border-0 border-b border-solid xl:mt-0;
 }
 .language-dropdown--header {
-  @apply ml-auto hidden lg_xl:block;
+  @apply ml-auto hidden lg_xl:block dark:text-white;
 }
 .language-dropdown--mobile {
   @apply mx-5 mb-5 block w-auto lg_xl:hidden dark:text-white;
