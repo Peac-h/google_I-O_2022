@@ -11,7 +11,7 @@ The page is fully responsive, mirroring the adaptability of the original page ac
 
 ## Checkout The Live Demo
 
-[Link to Page]()
+[Link to Page](https://g-io-clone.netlify.app/)
 
 ## Screenshots
 
@@ -20,6 +20,10 @@ The page is fully responsive, mirroring the adaptability of the original page ac
 ![Desktop-middle](https://raw.githubusercontent.com/Peac-h/google_I-O_2022/main/Screenshot%202024-07-19%20at%201.31.36%E2%80%AFPM.png)
 
 ![Desktop-bottom](https://raw.githubusercontent.com/Peac-h/google_I-O_2022/main/Screenshot%202024-07-19%20at%201.31.45%E2%80%AFPM.png)
+
+![Desktop-lightMode](https://raw.githubusercontent.com/Peac-h/google_I-O_2022/main/Screenshot%202024-07-19%20at%201.37.42%E2%80%AFPM.png)
+
+![Desktop-mobileNav](https://raw.githubusercontent.com/Peac-h/google_I-O_2022/main/Screenshot%202024-07-19%20at%201.38.16%E2%80%AFPM.png)
 
 ## Author
 
