@@ -24,7 +24,7 @@ const AnimationSVG = () => {
   return (
     <div className="hidden w-full self-end md:block md:h-[407px]">
       <button
-        className="border-dark group absolute right-4 top-4 z-40 rounded-full p-2 transition duration-200 ease-linear hover:bg-col-dark"
+        className="border-dark group absolute right-4 top-4 z-30 rounded-full p-2 transition duration-200 ease-linear hover:bg-col-dark"
         aria-label="pause animation"
         onClick={() => setIsPaused(!isPaused)}
       >
@@ -1143,7 +1143,7 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="border-dark bg-col-blue-darker flex w-full flex-col justify-between rounded-xl p-6 text-col-dark lg:min-w-[550px] xl:w-1/3 dark:bg-col-blue">
+        <div className="border-dark flex w-full flex-col justify-between rounded-xl bg-col-blue-darker p-6 text-col-dark lg:min-w-[550px] xl:w-1/3 dark:bg-col-blue">
           <h2 className="font-h2-large w-5/6">
             And that's a wrap!
             <br />

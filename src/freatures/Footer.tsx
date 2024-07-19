@@ -1,12 +1,15 @@
+import { useDarkMode } from "../context/useDarkMode";
 import LanguageDropdown from "../ui/LanguageDropdown";
 
-const ModeButtonSwitch = (props: { toggleDarkMode: () => void }) => {
+const ModeButtonSwitch = () => {
+  const { toggleDarkMode } = useDarkMode();
+
   return (
     <button
       aria-label="Toggle Dark Mode"
       role="button"
       className="flex items-start"
-      onClick={props.toggleDarkMode}
+      onClick={toggleDarkMode}
     >
       <svg
         width="24"
@@ -23,13 +26,13 @@ const ModeButtonSwitch = (props: { toggleDarkMode: () => void }) => {
   );
 };
 
-const Footer = (props: { toggleDarkMode: () => void }) => (
+const Footer = () => (
   <footer className="w-max-full flex flex-col bg-col-dark px-7 pb-16 pt-10 xl:flex-row xl:items-center xl:justify-between xl:px-16 xl:py-10">
     <div className="flex flex-1 flex-col items-start space-y-6 text-base font-medium text-col-grey xl:flex-row xl:items-center xl:space-x-6 xl:space-y-0">
       <div className="mb-4 flex w-full justify-between text-2xl font-semibold xl:mb-0 xl:mr-12 xl:w-16">
         <a href="/">Google</a>
         <div className="flex xl:hidden">
-          <ModeButtonSwitch toggleDarkMode={props.toggleDarkMode} />
+          <ModeButtonSwitch />
         </div>
       </div>
 
@@ -40,7 +43,7 @@ const Footer = (props: { toggleDarkMode: () => void }) => (
       <a href="/">FAQ</a>
 
       <div className="mt-6">
-        <LanguageDropdown className="border-grey mt-8 w-56 text-col-grey-dark xl:mt-0" />
+        <LanguageDropdown className="language-dropdown--footer" />
       </div>
     </div>
 
@@ -91,7 +94,7 @@ const Footer = (props: { toggleDarkMode: () => void }) => (
         />
       </a>
       <div className="hidden xl:flex">
-        <ModeButtonSwitch toggleDarkMode={props.toggleDarkMode} />
+        <ModeButtonSwitch />
       </div>
     </div>
   </footer>

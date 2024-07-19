@@ -1,68 +1,40 @@
 import { useCallback, useEffect, useState } from "react";
 import LanguageDropdown from "../ui/LanguageDropdown";
+import { useDarkMode } from "../context/useDarkMode";
 
-const MobileNavButton = () => (
-  <nav className="block xl:hidden">
-    <div className="ml-5 flex md:ml-0">
-      <button>
-        <svg
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            fillRule="evenodd"
-            clipRule="evenodd"
-            d="M3 18H21V16H3V18ZM3 13H21V11H3V13ZM3 6V8H21V6H3Z"
-            className="fill-col-dark dark:fill-col-light"
-          ></path>
-        </svg>
-      </button>
-    </div>
-  </nav>
-);
+const menuItems = [
+  { label: "Program", dropdown: ["Overview", "Speakers"] },
+  { label: "Products", link: "/" },
+  { label: "Community", link: "/" },
+  { label: "Learning Lab", link: "/" },
+  { label: "About", dropdown: ["Overview", "FAQ"] },
+];
 
-const HeaderLogo = (props: { isDarkMode: boolean }) => (
-  <a href="/" className="mr-12">
-    <img
-      className="h-[64px]"
-      src={
-        props.isDarkMode
-          ? "https://io.google/2022/app/images/Logo-dark.svg"
-          : "https://io.google/2022/app/images/Logo.svg"
-      }
-      height="64"
-      width="154"
-    />
-  </a>
-);
+const HeaderLogo = () => {
+  const { isDarkMode } = useDarkMode();
 
-const Menu = () => {
-  const [openDropdown, setOpenDropdown] = useState<number | null>(null);
-
-  const menuItems = [
-    { label: "Program", dropdown: ["Overview", "Speakers"] },
-    { label: "Products", link: "/" },
-    { label: "Community", link: "/" },
-    { label: "Learning Lab", link: "/" },
-    { label: "About", dropdown: ["Overview", "FAQ"] },
-  ];
-
-  const handleDropdownToggle = (index: number | null) => {
-    setOpenDropdown(openDropdown === index ? null : index);
-  };
-
-  const handleClickOutside = useCallback(
-    (event: MouseEvent) => {
-      const target = event.target as Element;
-      if (openDropdown !== null && !target.closest(".dropdown")) {
-        setOpenDropdown(null);
-      }
-    },
-    [openDropdown],
+  return (
+    <a href="/" className="mr-12">
+      <img
+        className="h-[64px]"
+        src={
+          isDarkMode
+            ? "https://io.google/2022/app/images/Logo-dark.svg"
+            : "https://io.google/2022/app/images/Logo.svg"
+        }
+        height="64"
+        width="154"
+      />
+    </a>
   );
+};
+
+const MobileNav = () => {
+  const [openMobileMenu, setOpenMobileMenu] = useState(false);
+
+  const handleClickOutside = useCallback((event: MouseEvent) => {
+    (event.target as Element).id === "overlay" && setOpenMobileMenu(false);
+  }, []);
 
   useEffect(() => {
     window.addEventListener("click", handleClickOutside);
@@ -71,6 +43,134 @@ const Menu = () => {
     };
   }, [handleClickOutside]);
 
+  useEffect(() => {
+    openMobileMenu
+      ? (document.body.style.overflow = "hidden")
+      : (document.body.style.overflow = "auto");
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [openMobileMenu]);
+
+  return (
+    <nav className="block xl:hidden" onClick={() => setOpenMobileMenu(true)}>
+      <div className="ml-5 flex md:ml-0">
+        <button>
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fillRule="evenodd"
+              clipRule="evenodd"
+              d="M3 18H21V16H3V18ZM3 13H21V11H3V13ZM3 6V8H21V6H3Z"
+              className="fill-col-dark dark:fill-col-light"
+            ></path>
+          </svg>
+        </button>
+      </div>
+
+      <div className={openMobileMenu ? "block" : "hidden"}>
+        <div className="mobileNav fixed left-0 top-0 z-50 flex h-full w-[19rem] max-w-full flex-col gap-4 overflow-y-scroll bg-white dark:bg-col-dark">
+          <HeaderLogo />
+
+          <Menu isMobile={true} />
+
+          <LanguageDropdown className="language-dropdown--mobile" />
+        </div>
+
+        <div
+          className="fixed left-0 top-0 z-40 h-full w-full bg-black/80"
+          id="overlay"
+        ></div>
+      </div>
+    </nav>
+  );
+};
+
+const MobileMenu = (props: {
+  openDropdown: number | null;
+  onDropdownToggle: (arg: number) => void;
+}) => {
+  return (
+    <ul className="mb-auto flex flex-col">
+      {menuItems.map((item, index) => (
+        <li key={index} className="dropdown pr-2 last:mt-1">
+          {item.link ? (
+            <a href={item.link} className="block px-5 pb-3 pt-4">
+              {item.label}
+            </a>
+          ) : (
+            <div>
+              <button
+                className={`flex w-full justify-between p-5 py-4 ${props.openDropdown === index ? "rounded-r-full bg-col-white-dark text-col-dark" : ""}`}
+                onClick={() => props.onDropdownToggle(index)}
+              >
+                <span>{item.label}</span>
+                <svg
+                  width="17"
+                  height="16"
+                  viewBox="0 0 17 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className={`rotate-0 transform ${props.openDropdown === index ? "rotate-180" : "rotate-0"}`}
+                >
+                  <mask
+                    id="mask0_672_74360"
+                    style={{ maskType: "alpha" }}
+                    maskUnits="userSpaceOnUse"
+                    x="3"
+                    y="5"
+                    width="12"
+                    height="7"
+                  >
+                    <path
+                      d="M4.39666 5.05957L3.45667 5.99957L8.79 11.3329L14.1233 5.99957L13.1833 5.05957L8.79 9.44624"
+                      className={`fill-col-dark ${props.openDropdown === index ? "" : "dark:fill-col-light"}`}
+                    ></path>
+                  </mask>
+                  <g mask="url(#mask0_672_74360)">
+                    <rect
+                      x="0.790039"
+                      width="16"
+                      height="16"
+                      className={`fill-col-dark ${props.openDropdown === index ? "" : "dark:fill-col-light"}`}
+                    ></rect>
+                  </g>
+                </svg>
+              </button>
+
+              <div
+                className={`flex-col items-start px-10 pt-4 text-col-dark dark:border-white dark:bg-col-dark dark:text-col-light ${props.openDropdown === index ? "flex" : "hidden"}`}
+              >
+                {item.dropdown?.map(
+                  (dropdownItem: string, dropdownIndex: number) => (
+                    <a
+                      key={dropdownIndex}
+                      href="/"
+                      className="mb-6 border-b-2 border-col-dark pb-1 last:mb-4 dark:border-white"
+                    >
+                      {dropdownItem}
+                    </a>
+                  ),
+                )}
+              </div>
+            </div>
+          )}
+        </li>
+      ))}
+    </ul>
+  );
+};
+
+const DesktopMenu = (props: {
+  openDropdown: number | null;
+  onDropdownToggle: (arg: number) => void;
+}) => {
   return (
     <ul className="mt-[1px] hidden w-[455.094px] flex-nowrap items-center justify-between text-sm leading-6 xl:flex">
       {menuItems.map((item, index) => (
@@ -80,7 +180,7 @@ const Menu = () => {
           ) : (
             <button
               className="relative flex items-center gap-2"
-              onClick={() => handleDropdownToggle(index)}
+              onClick={() => props.onDropdownToggle(index)}
             >
               <span>{item.label}</span>
               <svg
@@ -89,7 +189,7 @@ const Menu = () => {
                 viewBox="0 0 10 6"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                className={`${openDropdown === index ? "rotate-180" : "rotate-0"}`}
+                className={`${props.openDropdown === index ? "rotate-180" : "rotate-0"}`}
               >
                 <path
                   fillRule="evenodd"
@@ -99,7 +199,7 @@ const Menu = () => {
                 ></path>
               </svg>
               <div
-                className={`absolute top-8 z-20 flex-col items-start rounded-2xl border-2 border-col-dark bg-white p-4 text-col-dark dark:border-white dark:bg-col-dark dark:text-col-light ${openDropdown === index ? "flex" : "hidden"}`}
+                className={`absolute top-8 z-20 flex-col items-start rounded-2xl border-2 border-col-dark bg-white p-4 text-col-dark dark:border-white dark:bg-col-dark dark:text-col-light ${props.openDropdown === index ? "flex" : "hidden"}`}
               >
                 {item.dropdown?.map((dropdownItem, dropdownIndex) => (
                   <a
@@ -119,17 +219,49 @@ const Menu = () => {
   );
 };
 
-const Header = (props: { isDarkMode: boolean }) => (
+const Menu = (props: { isMobile?: boolean }) => {
+  const [openDropdown, setOpenDropdown] = useState<number | null>(null);
+
+  const handleDropdownToggle = (index: number | null) => {
+    setOpenDropdown(openDropdown === index ? null : index);
+  };
+
+  const handleClickOutside = useCallback(
+    (event: MouseEvent) => {
+      openDropdown !== null &&
+        !(event.target as Element).closest(".dropdown") &&
+        setOpenDropdown(null);
+    },
+    [openDropdown],
+  );
+
+  useEffect(() => {
+    window.addEventListener("click", handleClickOutside);
+    return () => {
+      window.removeEventListener("click", handleClickOutside);
+    };
+  }, [handleClickOutside]);
+
+  return props.isMobile ? (
+    <MobileMenu
+      openDropdown={openDropdown}
+      onDropdownToggle={handleDropdownToggle}
+    />
+  ) : (
+    <DesktopMenu
+      openDropdown={openDropdown}
+      onDropdownToggle={handleDropdownToggle}
+    />
+  );
+};
+
+const Header = () => (
   <header className="border-b-2 border-col-dark xl:border-b-0 dark:border-white">
     <nav className="flex items-center py-3 md:px-8">
-      <MobileNavButton />
-      <HeaderLogo isDarkMode={props.isDarkMode} />
+      <MobileNav />
+      <HeaderLogo />
       <Menu />
-      <div className="ml-auto flex">
-        <div className="hidden lg_xl:block">
-          <LanguageDropdown className="text-col-dark dark:text-white" />
-        </div>
-      </div>
+      <LanguageDropdown className="language-dropdown--header" />
     </nav>
   </header>
 );

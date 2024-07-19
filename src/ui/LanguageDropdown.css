@@ -24,3 +24,13 @@
     var(--tw-shadow);
   border-color: #1a73e8;
 }
+
+.language-dropdown--footer {
+  @apply mt-8 w-56 border-0 border-b border-solid border-col-grey-dark text-col-grey-dark xl:mt-0;
+}
+.language-dropdown--header {
+  @apply ml-auto hidden lg_xl:block;
+}
+.language-dropdown--mobile {
+  @apply mx-5 mb-5 block w-auto lg_xl:hidden dark:text-white;
+}

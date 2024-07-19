@@ -15,6 +15,7 @@ export default {
         "col-blue-sec": "#1a73e8",
         "col-blue-dark": "#8ab4f8",
         "col-blue-darker": "#538EF7",
+        "col-white-dark": "#E3E3E3",
       },
     },
     screens: {
